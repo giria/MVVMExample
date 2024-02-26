@@ -11,7 +11,10 @@ import SwiftUI
 struct MVVMExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let user = User(name: "John", age: 30)
+            let viewModel = UserViewModel(user: user)
+            
+            ContentView(viewModel: viewModel)
         }
     }
 }

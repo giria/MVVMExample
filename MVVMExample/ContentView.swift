@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+     var viewModel: UserViewModel
+       
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            let user = User(name: "John", age: 30)
+            let viewModel = UserViewModel(user: user)
+            UserView(viewModel: viewModel)
         }
-        .padding()
-    }
 }
 
 #Preview {
-    ContentView()
+    let user = User(name: "John", age: 30)
+    let viewModel = UserViewModel(user: user)
+    return UserView(viewModel: viewModel)
 }
